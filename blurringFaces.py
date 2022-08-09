@@ -11,7 +11,6 @@ import os
 
 
 try:
-    # make sure to install required libs for deface
     required_libs = {'imageio', 'ffmpeg', 'deface'}
     installed_libs = {pkg.key for pkg in pkg_resources.working_set}
     missing_libs = required_libs - installed_libs
@@ -25,11 +24,15 @@ if missing_libs:
 
 # loop for folder contains imgs to be blurred and store output imgs at same dir with same name including _anonymized
 imgs_path= "BlurringFaces/imgs"
-
-for img in os.listdir(imgs_path):
+ext = ".jpeg"
+# ext = ".png"
+threshold = "0.2"  # Default: 0.2
+imgs = [os.path.abspath(os.path.join(imgs_path,i)) for i in os.listdir(imgs_path)]
+for img in imgs:
+    print(img)
     try:
-        if img.endswith(".png"):
-            os.system('deface '+img)
+        if img.endswith(ext) and 'anonymized' not in img:
+            os.system('deface ' +img +' --thresh '+ threshold)
 
-    except Exception as e:
+    except Exception as ex:
         print("Can't convert: ", ex.message)
