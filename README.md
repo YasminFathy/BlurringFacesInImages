@@ -1,4 +1,4 @@
-# BlurringFacesInImages
+# Blurring faces in images using deface
 This is a simple code for blurring all imgs in a given a directory using [deface](https://github.com/ORB-HD/deface) library.
 
 Original frame | `deface` output (using default options including 0.2 threshold) | `deface` output (using 0.7 threshold options)
