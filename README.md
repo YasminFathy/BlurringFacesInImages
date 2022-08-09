@@ -6,7 +6,7 @@ Original frame | `deface` output (using default options including 0.2 threshold)
 ![imgs/city.jpeg](imgs/city.jpeg) | ![$ deface imgs/city_anonymized_thr0.2.jpeg](imgs/city_anonymized_thr0.2.jpeg) | ![$ deface imgs/city_anonymized_thr0.7.jpeg](imgs/city_anonymized_thr0.8.jpeg)
 
 
-The following description from the deface lib. You can esily extend the current code to include whatever combination you would like.
+The following description from the deface lib. You can easily extend the current code to include whatever combination you would like.
 
 ```
 usage: deface [--output O] [--thresh T] [--scale WxH] [--preview] [--boxes]
